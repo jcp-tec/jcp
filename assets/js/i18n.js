@@ -1,0 +1,396 @@
+/* Just Code People — translation dictionary (EN → PT-BR / DE)
+   ---------------------------------------------------------------------------
+   Keys are the ENGLISH source strings exactly as they appear in the HTML
+   (after HTML-entity decoding, so "&amp;" is written here as "&").
+   A string with no entry here simply stays in English — that is the safe
+   default, so adding new copy to a page never breaks the page.
+
+   To add a new translatable string: add the English text as a key under
+   both `pt` and `de`. Nothing else is needed — main.js picks it up. */
+
+window.JCP_I18N = {
+
+  /* Language metadata used by the switcher ------------------------------- */
+  languages: [
+    { code: 'en', htmlLang: 'en',    flag: '🇺🇸', short: 'EN', label: 'English' },
+    { code: 'pt', htmlLang: 'pt-BR', flag: '🇧🇷', short: 'PT', label: 'Português (BR)' },
+    { code: 'de', htmlLang: 'de',    flag: '🇩🇪', short: 'DE', label: 'Deutsch' }
+  ],
+
+  /* <title> and <meta name="description"> per page ------------------------ */
+  meta: {
+    'Just Code People | Specialized Salesforce Solutions': {
+      pt: 'Just Code People | Soluções Salesforce Especializadas',
+      de: 'Just Code People | Spezialisierte Salesforce-Lösungen' },
+    'Solutions | Just Code People': {
+      pt: 'Soluções | Just Code People',
+      de: 'Lösungen | Just Code People' },
+    'Meet the Team that Drives JCP | Just Code People': {
+      pt: 'Conheça o Time que Move a JCP | Just Code People',
+      de: 'Das Team hinter JCP | Just Code People' },
+    'About Us | Just Code People': {
+      pt: 'Sobre Nós | Just Code People',
+      de: 'Über uns | Just Code People' },
+    'Contact Us | Just Code People': {
+      pt: 'Fale Conosco | Just Code People',
+      de: 'Kontakt | Just Code People' },
+
+    'Just Code People empowers European companies with tailored Salesforce solutions, from implementation to custom development.': {
+      pt: 'A Just Code People capacita empresas europeias com soluções Salesforce sob medida, da implementação ao desenvolvimento personalizado.',
+      de: 'Just Code People unterstützt europäische Unternehmen mit maßgeschneiderten Salesforce-Lösungen – von der Implementierung bis zur individuellen Entwicklung.' },
+    'Comprehensive Specialized Salesforce Solutions designed for growth: implementation, integrations, support and training.': {
+      pt: 'Soluções Salesforce Especializadas e completas, projetadas para o crescimento: implementação, integrações, suporte e treinamento.',
+      de: 'Umfassende spezialisierte Salesforce-Lösungen für Wachstum: Implementierung, Integrationen, Support und Schulung.' },
+    'Meet the executive leadership and operational structure behind Just Code People.': {
+      pt: 'Conheça a liderança executiva e a estrutura operacional por trás da Just Code People.',
+      de: 'Lernen Sie das Führungsteam und die operative Struktur hinter Just Code People kennen.' },
+    'Just Code People bridges the gap between Brazilian talent and European business needs, delivering Specialized Salesforce Solutions since 2026.': {
+      pt: 'A Just Code People conecta o talento brasileiro às necessidades de negócio europeias, entregando Soluções Salesforce Especializadas desde 2026.',
+      de: 'Just Code People verbindet brasilianisches Talent mit europäischen Geschäftsanforderungen und liefert seit 2026 spezialisierte Salesforce-Lösungen.' },
+    'Ready to start your project? Get in touch with Just Code People today.': {
+      pt: 'Pronto para começar seu projeto? Fale com a Just Code People hoje mesmo.',
+      de: 'Bereit, Ihr Projekt zu starten? Nehmen Sie noch heute Kontakt mit Just Code People auf.' }
+  },
+
+  /* Portuguese (Brazil) --------------------------------------------------- */
+  pt: {
+    'Chat with us on WhatsApp': 'Fale conosco pelo WhatsApp',
+    "Hello! I would like to know more about Just Code People's Salesforce solutions.": 'Olá! Gostaria de saber mais sobre as soluções Salesforce da Just Code People.',
+    /* Header / nav / footer (shared by every page) */
+    'Specialized Salesforce Solutions': 'Soluções Salesforce Especializadas',
+    'Home': 'Início',
+    'Solutions': 'Soluções',
+    'Team': 'Time',
+    'About Us': 'Sobre Nós',
+    'Contact': 'Contato',
+    'Get Started': 'Começar',
+    'Toggle menu': 'Abrir menu',
+    'Contact Information': 'Informações de Contato',
+    '🇺🇸 English': '🇺🇸 Inglês',
+    '🇧🇷 Portuguese (BR)': '🇧🇷 Português (BR)',
+    '🇩🇪 German': '🇩🇪 Alemão',
+    '© 2026 Just Code People. All rights reserved.': '© 2026 Just Code People. Todos os direitos reservados.',
+
+    /* Home — hero + CTA */
+    'Specialized Salesforce Solutions for European Companies': 'Soluções Salesforce Especializadas para Empresas Europeias',
+    'We empower businesses with tailored Salesforce solutions, from implementation to custom development.': 'Capacitamos empresas com soluções Salesforce sob medida, da implementação ao desenvolvimento personalizado.',
+    'Explore Our Solutions →': 'Conheça Nossas Soluções →',
+    'Contact Us': 'Fale Conosco',
+    'Ready to Transform Your Business?': 'Pronto para Transformar Seu Negócio?',
+    'Join hundreds of satisfied European clients leveraging our Specialized Salesforce Solutions.': 'Junte-se a centenas de clientes europeus satisfeitos que já usam nossas Soluções Salesforce Especializadas.',
+
+    /* Home — solutions preview */
+    'Our Solutions': 'Nossas Soluções',
+    'Comprehensive Specialized Salesforce Solutions designed for growth.': 'Soluções Salesforce Especializadas e completas, projetadas para o crescimento.',
+    'Implementation & Customization': 'Implementação e Customização',
+    'Tailored Salesforce setup to match your unique business processes.': 'Configuração do Salesforce sob medida para os seus processos de negócio.',
+    'System Integrations': 'Integrações de Sistemas',
+    'Seamlessly connect Salesforce with your existing tools and platforms.': 'Conecte o Salesforce às ferramentas e plataformas que você já usa, sem atrito.',
+    'Support & Administration': 'Suporte e Administração',
+    'Ongoing maintenance and user support to ensure system health.': 'Manutenção contínua e suporte ao usuário para garantir a saúde do sistema.',
+    'Training & Capacity Building': 'Treinamento e Capacitação',
+    'Empowering your team to maximize Salesforce adoption and ROI.': 'Capacitando o seu time para maximizar a adoção do Salesforce e o ROI.',
+    'Learn more →': 'Saiba mais →',
+
+    /* Home — advantage */
+    'Our Advantage': 'Nosso Diferencial',
+    'Brazil-Based Experts': 'Especialistas no Brasil',
+    'Top-tier talent at competitive rates.': 'Talentos de primeira linha a preços competitivos.',
+    'European Focus': 'Foco na Europa',
+    'Specialized in serving European markets.': 'Especializados em atender mercados europeus.',
+    'Agile Methodology': 'Metodologia Ágil',
+    'Flexible and iterative delivery process.': 'Processo de entrega flexível e iterativo.',
+    'Certified Team': 'Time Certificado',
+    'Professionals committed to excellence.': 'Profissionais comprometidos com a excelência.',
+    'Excellence Delivered': 'Excelência Entregue',
+    'Bridging Brazil to Europe': 'Conectando o Brasil à Europa',
+    'Team collaboration': 'Colaboração em equipe',
+
+    /* Solutions page */
+    'Implementation & Development': 'Implementação e Desenvolvimento',
+    'End-to-end Salesforce implementation and custom Apex/LWC development.': 'Implementação Salesforce ponta a ponta e desenvolvimento customizado em Apex/LWC.',
+    'KEY BENEFITS': 'PRINCIPAIS BENEFÍCIOS',
+    'USE CASE': 'CASO DE USO',
+    'Custom Workflows': 'Fluxos de Trabalho Customizados',
+    'Automated Processes': 'Processos Automatizados',
+    'Enhanced Reporting': 'Relatórios Aprimorados',
+    '"Building a custom sales pipeline for a manufacturing client."': '"Construção de um pipeline de vendas customizado para um cliente da indústria."',
+    'Connecting Salesforce with ERP, Marketing, and Support systems.': 'Conectando o Salesforce a sistemas de ERP, Marketing e Suporte.',
+    'Unified Data View': 'Visão Unificada dos Dados',
+    'Real-time Sync': 'Sincronização em Tempo Real',
+    'Reduced Manual Entry': 'Menos Entrada Manual de Dados',
+    '"Integrating Salesforce with SAP for real-time inventory checks."': '"Integração do Salesforce com o SAP para consulta de estoque em tempo real."',
+    'Support & Admin': 'Suporte e Administração',
+    'Dedicated administration and troubleshooting for your org.': 'Administração dedicada e resolução de problemas para a sua org.',
+    'SLA-backed Support': 'Suporte com SLA',
+    'User Management': 'Gestão de Usuários',
+    'Security Audits': 'Auditorias de Segurança',
+    '"Daily administration for a mid-sized logistics company."': '"Administração diária para uma empresa de logística de médio porte."',
+    'Training': 'Treinamento',
+    'Custom training programs for admins and end-users.': 'Programas de treinamento sob medida para administradores e usuários finais.',
+    'Higher Adoption': 'Maior Adoção',
+    'Best Practices': 'Boas Práticas',
+    'Self-sufficiency': 'Autonomia',
+    '"Onboarding workshop for a new sales team."': '"Workshop de onboarding para um novo time de vendas."',
+
+    /* Team page */
+    'Meet the Team that Drives JCP': 'Conheça o Time que Move a JCP',
+    'Passionate experts driving your digital transformation.': 'Especialistas apaixonados impulsionando a sua transformação digital.',
+    'Executive Leadership': 'Liderança Executiva',
+    'Chief Operating Officer': 'Diretor de Operações',
+    'Driving operational excellence and strategic growth across all business verticals.': 'Impulsionando a excelência operacional e o crescimento estratégico em todas as verticais de negócio.',
+    'Chief Marketing Officer': 'Diretor de Marketing',
+    'Spearheading brand strategy and market expansion in the European sector.': 'Conduzindo a estratégia de marca e a expansão de mercado no setor europeu.',
+    'Operational Structure': 'Estrutura Operacional',
+    'Support & Operations': 'Suporte e Operações',
+    'Implementation Manager / DevOps': 'Gerente de Implementação / DevOps',
+    'Maintenance Manager': 'Gerente de Manutenção',
+    'Infrastructure & IT': 'Infraestrutura e TI',
+    'Development & Product': 'Desenvolvimento e Produto',
+    'Project Manager (PO)': 'Gerente de Projeto (PO)',
+    'Software Architect': 'Arquiteto de Software',
+    'Development Team (Front/Back/Mobile)': 'Time de Desenvolvimento (Front/Back/Mobile)',
+    'Quality Assurance (QA)': 'Garantia de Qualidade (QA)',
+    'Business Analyst (BA)': 'Analista de Negócios (BA)',
+    'Our Commitment': 'Nosso Compromisso',
+    'Strong Culture': 'Cultura Forte',
+    'Focus on Results': 'Foco em Resultados',
+    'Agility in Delivery': 'Agilidade na Entrega',
+    'International Presence': 'Presença Internacional',
+    '"We are ready to take your business to the next level."': '"Estamos prontos para levar o seu negócio ao próximo nível."',
+
+    /* About page */
+    'About Just Code People': 'Sobre a Just Code People',
+    'Bridging the gap between Brazilian talent and European business needs.': 'Conectando o talento brasileiro às necessidades de negócio europeias.',
+    'Since 2026': 'Desde 2026',
+    'Our Story': 'Nossa História',
+    'Founded in 2026 in Curitiba, Paraná, Just Code People was born from a vision to provide Specialized Salesforce Solutions to the international market.': 'Fundada em 2026 em Curitiba, Paraná, a Just Code People nasceu da visão de levar Soluções Salesforce Especializadas ao mercado internacional.',
+    'Mission': 'Missão',
+    'To deliver Specialized Salesforce Solutions that drive efficiency and growth for our clients.': 'Entregar Soluções Salesforce Especializadas que impulsionem a eficiência e o crescimento dos nossos clientes.',
+    'Vision': 'Visão',
+    'To be the preferred nearshore Salesforce partner for European enterprises.': 'Ser o parceiro nearshore de Salesforce preferido das empresas europeias.',
+    'Established': 'Fundada em',
+    'TARGET MARKET': 'MERCADO-ALVO',
+    'Market Focus': 'Foco de Mercado',
+    'We specialize in serving the European market, understanding the specific regulatory and business requirements of the region.': 'Somos especializados em atender o mercado europeu, compreendendo os requisitos regulatórios e de negócio específicos da região.',
+    'Our Core Values': 'Nossos Valores',
+    'Innovation': 'Inovação',
+    'Constantly seeking better solutions.': 'Buscando constantemente soluções melhores.',
+    'Quality': 'Qualidade',
+    'Code that stands the test of time.': 'Código que resiste ao tempo.',
+    'Client Focus': 'Foco no Cliente',
+    'Your success is our success.': 'O seu sucesso é o nosso sucesso.',
+    'Continuous Learning': 'Aprendizado Contínuo',
+    'Staying ahead of the tech curve.': 'Sempre à frente da curva tecnológica.',
+    'Just Code People team at work': 'Time da Just Code People em ação',
+    'European Union': 'União Europeia',
+
+    /* Contact page */
+    'Ready to start your project? Get in touch today.': 'Pronto para começar o seu projeto? Fale com a gente hoje mesmo.',
+    'Name': 'Nome',
+    'Email': 'E-mail',
+    'Subject': 'Assunto',
+    'Message': 'Mensagem',
+    'Send Message': 'Enviar Mensagem',
+    'John Doe': 'João da Silva',
+    'john@company.com': 'joao@empresa.com',
+    'Project Inquiry': 'Consulta sobre projeto',
+    'Tell us about your project...': 'Conte-nos sobre o seu projeto...',
+    'Visit Us': 'Visite-nos',
+    'R. Heitor Stockler de França, 396 — Unit 411, Centro Cívico': 'R. Heitor Stockler de França, 396 — sala 411, Centro Cívico',
+    'Curitiba, Paraná — 80030-030, Brazil': 'Curitiba, Paraná — 80030-030, Brasil',
+    'Call / WhatsApp': 'Telefone / WhatsApp',
+    'Email Us': 'Envie um E-mail',
+
+    /* Contact form feedback (see main.js) */
+    'Sending...': 'Enviando...',
+    'Thanks! Your message has been sent - we will get back to you shortly.': 'Obrigado! Sua mensagem foi enviada — responderemos em breve.',
+    'Something went wrong. Please try again, or write to us directly at info@justcodepeople.com.': 'Algo deu errado. Tente novamente ou escreva direto para info@justcodepeople.com.',
+    'Opening your email app...': 'Abrindo o seu aplicativo de e-mail...',
+
+    /* About page: headquarters carousel */
+    'Open kitchen counter': 'Balcão da cozinha',
+    'Three wooden bar stools at a kitchen counter, with sliding glass doors opening to the garden.': 'Três bancos altos de madeira em um balcão de cozinha, com portas de vidro de correr para o jardim.',
+    'Work corner on the terrace': 'Cantinho de trabalho no terraço',
+    'A laptop on a side table next to a black woven armchair and potted plants on the terrace.': 'Um notebook sobre uma mesa lateral ao lado de uma poltrona preta trançada e vasos de plantas no terraço.',
+    'Terrace': 'Terraço',
+    'Terrace with a black armchair, side table and potted plants beside a glass railing.': 'Terraço com poltrona preta, mesa lateral e vasos de plantas ao lado de um guarda-corpo de vidro.',
+    'Lounge area': 'Área de descanso',
+    'Lounge area with a tan sofa, a small white side table and a textured grey wall.': 'Área de descanso com sofá bege, uma pequena mesa lateral branca e parede cinza texturizada.',
+    'Staircase': 'Escada',
+    'Wooden slats and a stone staircase leading toward the lounge.': 'Ripas de madeira e uma escada de pedra que leva à área de descanso.',
+    'Stairs and glass': 'Escada e vidro',
+    'Stone staircase with wooden slats beside a glass-walled room with an armchair.': 'Escada de pedra com ripas de madeira ao lado de uma sala com paredes de vidro e uma poltrona.'
+  },
+
+  /* German ---------------------------------------------------------------- */
+  de: {
+    'Chat with us on WhatsApp': 'Schreiben Sie uns per WhatsApp',
+    "Hello! I would like to know more about Just Code People's Salesforce solutions.": 'Hallo! Ich möchte mehr über die Salesforce-Lösungen von Just Code People erfahren.',
+    /* Header / nav / footer (shared by every page) */
+    'Specialized Salesforce Solutions': 'Spezialisierte Salesforce-Lösungen',
+    'Home': 'Startseite',
+    'Solutions': 'Lösungen',
+    'Team': 'Team',
+    'About Us': 'Über uns',
+    'Contact': 'Kontakt',
+    'Get Started': 'Jetzt starten',
+    'Toggle menu': 'Menü öffnen',
+    'Contact Information': 'Kontaktinformationen',
+    '🇺🇸 English': '🇺🇸 Englisch',
+    '🇧🇷 Portuguese (BR)': '🇧🇷 Portugiesisch (BR)',
+    '🇩🇪 German': '🇩🇪 Deutsch',
+    '© 2026 Just Code People. All rights reserved.': '© 2026 Just Code People. Alle Rechte vorbehalten.',
+
+    /* Home — hero + CTA */
+    'Specialized Salesforce Solutions for European Companies': 'Spezialisierte Salesforce-Lösungen für europäische Unternehmen',
+    'We empower businesses with tailored Salesforce solutions, from implementation to custom development.': 'Wir stärken Unternehmen mit maßgeschneiderten Salesforce-Lösungen – von der Implementierung bis zur individuellen Entwicklung.',
+    'Explore Our Solutions →': 'Unsere Lösungen entdecken →',
+    'Contact Us': 'Kontaktieren Sie uns',
+    'Ready to Transform Your Business?': 'Bereit, Ihr Unternehmen zu transformieren?',
+    'Join hundreds of satisfied European clients leveraging our Specialized Salesforce Solutions.': 'Schließen Sie sich Hunderten zufriedener europäischer Kunden an, die unsere spezialisierten Salesforce-Lösungen nutzen.',
+
+    /* Home — solutions preview */
+    'Our Solutions': 'Unsere Lösungen',
+    'Comprehensive Specialized Salesforce Solutions designed for growth.': 'Umfassende spezialisierte Salesforce-Lösungen, konzipiert für Wachstum.',
+    'Implementation & Customization': 'Implementierung & Anpassung',
+    'Tailored Salesforce setup to match your unique business processes.': 'Maßgeschneiderte Salesforce-Einrichtung, passend zu Ihren Geschäftsprozessen.',
+    'System Integrations': 'Systemintegrationen',
+    'Seamlessly connect Salesforce with your existing tools and platforms.': 'Verbinden Sie Salesforce nahtlos mit Ihren bestehenden Tools und Plattformen.',
+    'Support & Administration': 'Support & Administration',
+    'Ongoing maintenance and user support to ensure system health.': 'Laufende Wartung und Anwendersupport für einen stabilen Systembetrieb.',
+    'Training & Capacity Building': 'Schulung & Kompetenzaufbau',
+    'Empowering your team to maximize Salesforce adoption and ROI.': 'Wir befähigen Ihr Team, Salesforce-Akzeptanz und ROI zu maximieren.',
+    'Learn more →': 'Mehr erfahren →',
+
+    /* Home — advantage */
+    'Our Advantage': 'Unser Vorteil',
+    'Brazil-Based Experts': 'Expertise aus Brasilien',
+    'Top-tier talent at competitive rates.': 'Erstklassige Talente zu wettbewerbsfähigen Konditionen.',
+    'European Focus': 'Fokus auf Europa',
+    'Specialized in serving European markets.': 'Spezialisiert auf europäische Märkte.',
+    'Agile Methodology': 'Agile Methodik',
+    'Flexible and iterative delivery process.': 'Flexibler und iterativer Lieferprozess.',
+    'Certified Team': 'Zertifiziertes Team',
+    'Professionals committed to excellence.': 'Fachleute, die für Exzellenz stehen.',
+    'Excellence Delivered': 'Gelieferte Exzellenz',
+    'Bridging Brazil to Europe': 'Die Brücke von Brasilien nach Europa',
+    'Team collaboration': 'Zusammenarbeit im Team',
+
+    /* Solutions page */
+    'Implementation & Development': 'Implementierung & Entwicklung',
+    'End-to-end Salesforce implementation and custom Apex/LWC development.': 'End-to-End-Salesforce-Implementierung und individuelle Apex/LWC-Entwicklung.',
+    'KEY BENEFITS': 'WICHTIGSTE VORTEILE',
+    'USE CASE': 'ANWENDUNGSFALL',
+    'Custom Workflows': 'Individuelle Workflows',
+    'Automated Processes': 'Automatisierte Prozesse',
+    'Enhanced Reporting': 'Verbessertes Reporting',
+    '"Building a custom sales pipeline for a manufacturing client."': '„Aufbau einer individuellen Vertriebspipeline für einen Kunden aus der Fertigung."',
+    'Connecting Salesforce with ERP, Marketing, and Support systems.': 'Verbindung von Salesforce mit ERP-, Marketing- und Support-Systemen.',
+    'Unified Data View': 'Einheitliche Datensicht',
+    'Real-time Sync': 'Synchronisierung in Echtzeit',
+    'Reduced Manual Entry': 'Weniger manuelle Eingaben',
+    '"Integrating Salesforce with SAP for real-time inventory checks."': '„Integration von Salesforce mit SAP für Bestandsabfragen in Echtzeit."',
+    'Support & Admin': 'Support & Administration',
+    'Dedicated administration and troubleshooting for your org.': 'Dedizierte Administration und Fehlerbehebung für Ihre Org.',
+    'SLA-backed Support': 'Support mit SLA',
+    'User Management': 'Benutzerverwaltung',
+    'Security Audits': 'Sicherheitsaudits',
+    '"Daily administration for a mid-sized logistics company."': '„Tägliche Administration für ein mittelständisches Logistikunternehmen."',
+    'Training': 'Schulung',
+    'Custom training programs for admins and end-users.': 'Maßgeschneiderte Schulungsprogramme für Administratoren und Endanwender.',
+    'Higher Adoption': 'Höhere Akzeptanz',
+    'Best Practices': 'Best Practices',
+    'Self-sufficiency': 'Eigenständigkeit',
+    '"Onboarding workshop for a new sales team."': '„Onboarding-Workshop für ein neues Vertriebsteam."',
+
+    /* Team page */
+    'Meet the Team that Drives JCP': 'Das Team, das JCP antreibt',
+    'Passionate experts driving your digital transformation.': 'Engagierte Fachleute, die Ihre digitale Transformation vorantreiben.',
+    'Executive Leadership': 'Führungsteam',
+    'Chief Operating Officer': 'Chief Operating Officer',
+    'Driving operational excellence and strategic growth across all business verticals.': 'Treibt operative Exzellenz und strategisches Wachstum über alle Geschäftsbereiche hinweg voran.',
+    'Chief Marketing Officer': 'Chief Marketing Officer',
+    'Spearheading brand strategy and market expansion in the European sector.': 'Verantwortet Markenstrategie und Marktexpansion im europäischen Raum.',
+    'Operational Structure': 'Operative Struktur',
+    'Support & Operations': 'Support & Betrieb',
+    'Implementation Manager / DevOps': 'Implementierungsmanagement / DevOps',
+    'Maintenance Manager': 'Wartungsmanagement',
+    'Infrastructure & IT': 'Infrastruktur & IT',
+    'Development & Product': 'Entwicklung & Produkt',
+    'Project Manager (PO)': 'Projektmanagement (PO)',
+    'Software Architect': 'Softwarearchitektur',
+    'Development Team (Front/Back/Mobile)': 'Entwicklungsteam (Front/Back/Mobile)',
+    'Quality Assurance (QA)': 'Qualitätssicherung (QA)',
+    'Business Analyst (BA)': 'Business-Analyse (BA)',
+    'Our Commitment': 'Unser Anspruch',
+    'Strong Culture': 'Starke Kultur',
+    'Focus on Results': 'Fokus auf Ergebnisse',
+    'Agility in Delivery': 'Agilität in der Umsetzung',
+    'International Presence': 'Internationale Präsenz',
+    '"We are ready to take your business to the next level."': '„Wir sind bereit, Ihr Unternehmen auf die nächste Stufe zu heben."',
+
+    /* About page */
+    'About Just Code People': 'Über Just Code People',
+    'Bridging the gap between Brazilian talent and European business needs.': 'Wir verbinden brasilianisches Talent mit europäischen Geschäftsanforderungen.',
+    'Since 2026': 'Seit 2026',
+    'Our Story': 'Unsere Geschichte',
+    'Founded in 2026 in Curitiba, Paraná, Just Code People was born from a vision to provide Specialized Salesforce Solutions to the international market.': 'Just Code People wurde 2026 in Curitiba, Paraná, gegründet – aus der Vision heraus, spezialisierte Salesforce-Lösungen für den internationalen Markt bereitzustellen.',
+    'Mission': 'Mission',
+    'To deliver Specialized Salesforce Solutions that drive efficiency and growth for our clients.': 'Spezialisierte Salesforce-Lösungen liefern, die Effizienz und Wachstum unserer Kunden fördern.',
+    'Vision': 'Vision',
+    'To be the preferred nearshore Salesforce partner for European enterprises.': 'Der bevorzugte Nearshore-Salesforce-Partner für europäische Unternehmen sein.',
+    'Established': 'Gegründet',
+    'TARGET MARKET': 'ZIELMARKT',
+    'Market Focus': 'Marktfokus',
+    'We specialize in serving the European market, understanding the specific regulatory and business requirements of the region.': 'Wir sind auf den europäischen Markt spezialisiert und kennen die spezifischen regulatorischen und geschäftlichen Anforderungen der Region.',
+    'Our Core Values': 'Unsere Werte',
+    'Innovation': 'Innovation',
+    'Constantly seeking better solutions.': 'Wir suchen beständig nach besseren Lösungen.',
+    'Quality': 'Qualität',
+    'Code that stands the test of time.': 'Code, der Bestand hat.',
+    'Client Focus': 'Kundenfokus',
+    'Your success is our success.': 'Ihr Erfolg ist unser Erfolg.',
+    'Continuous Learning': 'Kontinuierliches Lernen',
+    'Staying ahead of the tech curve.': 'Der technologischen Entwicklung immer einen Schritt voraus.',
+    'Just Code People team at work': 'Das Team von Just Code People bei der Arbeit',
+    'European Union': 'Europäische Union',
+
+    /* Contact page */
+    'Ready to start your project? Get in touch today.': 'Bereit, Ihr Projekt zu starten? Nehmen Sie noch heute Kontakt auf.',
+    'Name': 'Name',
+    'Email': 'E-Mail',
+    'Subject': 'Betreff',
+    'Message': 'Nachricht',
+    'Send Message': 'Nachricht senden',
+    'John Doe': 'Max Mustermann',
+    'john@company.com': 'max@unternehmen.de',
+    'Project Inquiry': 'Projektanfrage',
+    'Tell us about your project...': 'Erzählen Sie uns von Ihrem Projekt...',
+    'Visit Us': 'Besuchen Sie uns',
+    'R. Heitor Stockler de França, 396 — Unit 411, Centro Cívico': 'R. Heitor Stockler de França 396 — Einheit 411, Centro Cívico',
+    'Curitiba, Paraná — 80030-030, Brazil': 'Curitiba, Paraná — 80030-030, Brasilien',
+    'Call / WhatsApp': 'Telefon / WhatsApp',
+    'Email Us': 'Schreiben Sie uns',
+
+    /* Contact form feedback (see main.js) */
+    'Sending...': 'Wird gesendet...',
+    'Thanks! Your message has been sent - we will get back to you shortly.': 'Danke! Ihre Nachricht wurde gesendet – wir melden uns in Kürze.',
+    'Something went wrong. Please try again, or write to us directly at info@justcodepeople.com.': 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@justcodepeople.com.',
+    'Opening your email app...': 'Ihre E-Mail-App wird geöffnet...',
+
+    /* About page: headquarters carousel */
+    'Open kitchen counter': 'Offene Küchentheke',
+    'Three wooden bar stools at a kitchen counter, with sliding glass doors opening to the garden.': 'Drei Barhocker aus Holz an einer Küchentheke, mit Glasschiebetüren zum Garten.',
+    'Work corner on the terrace': 'Arbeitsecke auf der Terrasse',
+    'A laptop on a side table next to a black woven armchair and potted plants on the terrace.': 'Ein Laptop auf einem Beistelltisch neben einem schwarzen geflochtenen Sessel und Topfpflanzen auf der Terrasse.',
+    'Terrace': 'Terrasse',
+    'Terrace with a black armchair, side table and potted plants beside a glass railing.': 'Terrasse mit schwarzem Sessel, Beistelltisch und Topfpflanzen neben einem Glasgeländer.',
+    'Lounge area': 'Lounge-Bereich',
+    'Lounge area with a tan sofa, a small white side table and a textured grey wall.': 'Lounge-Bereich mit beigem Sofa, einem kleinen weißen Beistelltisch und einer strukturierten grauen Wand.',
+    'Staircase': 'Treppe',
+    'Wooden slats and a stone staircase leading toward the lounge.': 'Holzlamellen und eine Steintreppe, die zum Lounge-Bereich führt.',
+    'Stairs and glass': 'Treppe und Glas',
+    'Stone staircase with wooden slats beside a glass-walled room with an armchair.': 'Steintreppe mit Holzlamellen neben einem Raum mit Glaswänden und einem Sessel.'
+  }
+};

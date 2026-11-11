@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+
+# Variaveis de ambiente / segredos
+.env
+.env.*
+!.env.example
+
+# Agentes
+.claude
