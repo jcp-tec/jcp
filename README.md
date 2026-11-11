@@ -115,12 +115,3 @@ Qualquer endpoint que aceite `POST` com JSON serve — [Formspree](https://forms
 Se você publicar na Netlify, há ainda a opção nativa: adicione `data-netlify="true"` e `<input type="hidden" name="form-name" value="contact">` no `<form>` — aí a Netlify recebe os envios sem serviço externo nenhum.
 
 O e-mail de destino do modo padrão fica em `CONTACT_EMAIL`, na mesma linha do arquivo.
-
-## O que falta para ficar 100% igual à produção
-
-- **Imagens de banco (Unsplash):** ainda carregadas por URL externa — ver seção "Imagens" acima.
-
-## Alternativa: exportar da ferramenta original
-
-Como o site foi criado com Hostinger Horizons, também vale a pena verificar se essa plataforma oferece exportação de código-fonte pelo painel da conta usada para criá-lo — isso traria o projeto "original" tal como foi desenhado, em vez desta recriação.
-# jcp
