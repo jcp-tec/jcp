@@ -217,7 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
       var n = slides.length;
       var index = 0;
       var dots = [];
-      function dotLabel(k) { return t('Go to photo', currentLang) + ' ' + (k + 1); }
+      var dotText = root.getAttribute('data-dot-label') || 'Go to photo'; /* each carousel can name what it holds */
+      function dotLabel(k) { return t(dotText, currentLang) + ' ' + (k + 1); }
       if (!track || !n) return;
 
       slides.forEach(function (s, i) {

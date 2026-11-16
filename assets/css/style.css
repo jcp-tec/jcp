@@ -402,6 +402,167 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 }
 .contact-social a:hover { background: var(--color-primary); color: #fff; }
 
+/* Projetos de referencia (home) --------------------------------------------- */
+/* Card em coluna: o link fica na base mesmo com descricoes de tamanhos diferentes (DE e mais longo) */
+.project-card { display: flex; flex-direction: column; }
+.project-card > a.btn-link { margin-top: auto; align-self: flex-start; }
+/* Home: caixa neutra comum, tres logos de formato e cor diferentes parecem uma familia (o portfolio usa .project-avatar).
+   Sem width/height no <img> (mesma regra das fotos do time): a caixa limita o tamanho. */
+.project-logo {
+  height: 120px;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+}
+.project-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.section-actions { text-align: center; margin-top: 3rem; }
+
+@media (max-width: 960px) {
+  /* .grid-3 viraria 2 colunas e deixaria o 3o card orfao: 1 coluna centralizada */
+  .projects-grid { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+}
+@media (max-width: 720px) {
+  .section-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* Portfolio (pagina) ---------------------------------------------------------- */
+/* Grade de cards compactos: reaproveita .card.project-card da home (a caixa .project-logo e so da home).
+   3 colunas >960px, 2 colunas 561-960px, 1 coluna <=560px. */
+.portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+.portfolio-grid > .project-card { scroll-margin-top: 96px; } /* header fixo nao cobre o card ao vir da ancora */
+.portfolio-grid .project-card h3 { overflow-wrap: break-word; }
+.portfolio-grid .project-card:target {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-bg-tint), var(--shadow-lift);
+}
+.portfolio-back { margin-top: 0; padding: 1.5rem 0 3rem; }
+@media (max-width: 960px) {
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  /* ultimo card sozinho na linha: centralizado na largura de uma coluna, sem buraco ao lado */
+  .portfolio-grid > .project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc((100% - 1.75rem) / 2);
+    justify-self: center;
+  }
+}
+@media (max-width: 560px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid > .project-card:last-child:nth-child(odd) { width: auto; }
+}
+
+/* Previa do site (card de portfolio) ------------------------------------------ */
+/* Reaproveita o carrossel .carousel (scroll-snap, sem autoplay) com 16/10 fixo: sem layout shift.
+   Sem width/height no <img> (regra do README). Os slides nao sao links: so o "Visit website" da base
+   (evita links duplicados). O avatar (logo) mora no .carousel-stage, fora do track que corta overflow,
+   e desce metade para fora da previa; a fileira de dots (44px) fica a direita, entao avatar e dots
+   nunca se cobrem e o h3 comeca abaixo dos 32px que o avatar invade. Setas ficam a meia altura e
+   o avatar no canto de baixo: tambem nao se encontram. */
+.carousel--preview { margin-bottom: 0.75rem; }
+.carousel--preview .carousel-track { border: 1px solid var(--color-border); border-radius: var(--radius-sm); box-shadow: none; }
+.carousel--preview .carousel-slide { aspect-ratio: 16 / 10; }
+.carousel--preview .carousel-slide img { object-position: top; }
+.carousel--preview .carousel-prev { left: 0.5rem; }
+.carousel--preview .carousel-next { right: 0.5rem; }
+.carousel--preview .carousel-dots { justify-content: flex-end; flex-wrap: nowrap; gap: 0; margin-top: 0; padding-left: calc(64px + 0.5rem); } /* nao invade a coluna do avatar; 4 dots de 44px cabem em 1 linha */
+.carousel--preview .carousel-dot { width: 36px; } /* >= 24px (WCAG 2.2 AA); 4 dots + avatar cabem no card estreito */
+@media (max-width: 380px) { .carousel--preview .carousel-dot { width: 30px; } }
+/* Mouse: setas so em hover/foco (nao poluem a previa). Toque/teclado: sempre visiveis. */
+@media (hover: hover) and (pointer: fine) {
+  .carousel--preview .carousel-btn { opacity: 0; }
+  .carousel--preview:hover .carousel-btn, .carousel--preview:focus-within .carousel-btn { opacity: 1; }
+  .carousel--preview:hover .carousel-btn:disabled, .carousel--preview:focus-within .carousel-btn:disabled { opacity: 0.4; }
+}
+/* Logo como "foto de perfil": fundo branco + borda branca 3px separam o logo da previa (contraste de
+   borda vem da sombra). z-index 3 fica acima do track e das setas (2). */
+.project-avatar {
+  position: absolute;
+  left: 1rem;
+  bottom: -32px;
+  z-index: 3;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 7px;
+  border: 3px solid #fff;
+  border-radius: var(--radius-full);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  object-fit: contain;
+}
+/* Logo quadrado com fundo proprio (JPG bege da Maria Cafareli): preenche o circulo sem padding */
+.project-avatar--cover { padding: 0; object-fit: cover; }
+
+/* Detalhes do card de projeto (pagina de portfolio) ------------------------ */
+/* Bloco opcional "What we did" / "Result": so existe no HTML quando ha conteudo real */
+.project-details { margin: 0 0 1.25rem; padding-top: 1rem; border-top: 1px solid var(--color-border); font-size: 0.92rem; color: var(--color-text-muted); }
+.project-details h4 { margin: 0 0 0.4rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); }
+.project-details h4:not(:first-child) { margin-top: 0.9rem; }
+.project-details ul { margin: 0; padding-left: 1.1rem; }
+.project-details li, .project-details p { margin: 0 0 0.25rem; overflow-wrap: break-word; }
+
+/* Faixa de tecnologias (marquee, home, fim da secao de projetos) ------------------------ */
+/* Gradiente primary -> primary-dark: azul da marca, mais claro que a .cta-band (primary-darker) logo abaixo.
+   Branco sobre --color-primary = 5.2:1 (AA). Logos ficam brancos via filter; sem trocar o SVG original. */
+.tech-band {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  padding: 0.75rem 0;
+  overflow: hidden;
+  /* filete claro: separa a faixa da .cta-band azul escura logo abaixo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+.tech-marquee {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* Fade nas laterais */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.tech-track {
+  display: flex;
+  width: max-content;
+  animation: jcp-tech-scroll 40s linear infinite;
+}
+/* Pausa no hover e quando algo dentro recebe foco */
+.tech-marquee:hover .tech-track, .tech-marquee:focus-within .tech-track { animation-play-state: paused; }
+.tech-list {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 50vw; /* 4 listas >= 200vw: o loop em -25% cobre telas ultralargas */
+  justify-content: space-around;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  /* mesmo espaco no fim de cada lista: o loop em -25% fica sem emenda */
+  padding: 0 clamp(1.25rem, 3vw, 2.25rem);
+  margin: 0;
+  list-style: none;
+}
+.tech-item { display: flex; align-items: center; height: 32px; flex-shrink: 0; }
+.tech-item img { height: 28px; width: auto; max-width: none; filter: brightness(0) invert(1); }
+.tech-word { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+/* Nome completo para leitores de tela (o wordmark visivel e "LWC") */
+.tech-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@keyframes jcp-tech-scroll { to { transform: translateX(-25%); } }
+
+@media (max-width: 720px) {
+  .tech-track { animation-duration: 30s; }
+  .tech-item img { height: 24px; }
+  .tech-word { font-size: 1.25rem; }
+}
+/* Sem movimento: logos estaticos, centralizados e com quebra de linha; copias duplicadas somem */
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee { -webkit-mask-image: none; mask-image: none; }
+  .tech-track { animation: none; display: block; width: auto; }
+  .tech-list[aria-hidden="true"] { display: none; }
+  .tech-list { flex-shrink: 1; min-width: 0; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: 1.25rem 2.5rem; padding: 0.75rem 1.25rem; }
+}
+
 /* Responsive ------------------------------------------------------------------ */
 @media (max-width: 1000px) {
   /* Menu mobile/tablet: o header completo (logo + nav + idioma + CTA) nao cabe
@@ -453,7 +614,7 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 }
 
 /* Responsividade global: grids/cards nao estouram com texto longo (DE) ou zoom --- */
-.grid > *, .team-grid > *, .org-columns > *, .footer-top > *, .contact-layout > *, .advantage > *, .solution-row > * { min-width: 0; }
+.grid > *, .projects-grid > *, .portfolio-grid > *, .team-grid > *, .org-columns > *, .footer-top > *, .contact-layout > *, .advantage > *, .solution-row > * { min-width: 0; }
 .card, .team-card, .footer-top, .org-columns li { overflow-wrap: break-word; }
 .footer-brand .logo { flex-wrap: wrap; }
 .footer-list a, .footer-list li, .contact-card a { min-width: 0; overflow-wrap: anywhere; }
@@ -461,7 +622,7 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 
 /* Alvos de toque >= 44px em celular/tablet (<=960px) e ponteiro grosso (visual desktop intacto) */
 @media (max-width: 960px), (pointer: coarse) {
-  .card > a.btn-link, .about-what .card .btn-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .card > a.btn-link, .about-what .card .btn-link, .portfolio-back .btn-link { display: inline-flex; align-items: center; min-height: 44px; }
   .footer-list { gap: 0; }
   .footer-list li { min-height: 44px; }
   .footer-list a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -803,6 +964,7 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 .carousel-dots { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
 .carousel-dot {
   position: relative;
+  flex-shrink: 0;
   width: 44px; height: 44px;
   border: 0;
   background: none;

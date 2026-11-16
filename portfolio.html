@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Just Code People</title>
+  <meta name="description" content="Reference projects from companies Just Code People has worked with." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%225%22 fill=%22%232563eb%22/><text x=%2212%22 y=%2216.5%22 font-family=%22Arial%22 font-size=%228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>JCP</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="assets/css/style.css?v=bbea55d1" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">JCP</span>
+        <span class="logo-text"><strong>Just Code People</strong><small>Specialized Salesforce Solutions</small></span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="team.html">Team</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-switch" type="button">🇺🇸 EN</button>
+        <a href="contact.html" class="btn-outline">Get Started</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-3" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <span class="hero-eyebrow">Portfolio</span>
+        <h1>Our Reference Projects</h1>
+        <p class="lead">Selected projects from companies we have worked with.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- TO ADD A PROJECT: copy one whole <article class="card project-card"> below, paste it at the end
+             of this grid and change: id (unique, kebab-case; used by portfolio.html#id links), the h3 name,
+             the p description and the website href. Remember to add the new texts to
+             assets/js/i18n.js?v=b28ef58d (pt and de). The grid reflows by itself.
+
+             Preview = carousel of 3 to 4 public pages of the client site (home top + inner pages such as
+             shop, product page, services/plans). Capture at 1440x810, save as WebP 1200px wide (<150KB each)
+             in assets/images/projects/previews/<slug>-1.webp, <slug>-2.webp... Close cookie banners and
+             popups, never edit the images. Slide structure (keep the data-* attributes; main.js wires
+             buttons, dots and keyboard, no autoplay):
+
+             <div class="carousel carousel--preview" role="region" aria-label="NAME website screenshots" data-carousel data-dot-label="Go to screenshot">
+               <div class="carousel-stage">
+                 <div class="carousel-track" tabindex="0">
+                   <figure class="carousel-slide"><img src="...-1.webp" alt="specific description of this page" /></figure>
+                   <figure class="carousel-slide"><img src="...-2.webp" alt="..." loading="lazy" /></figure>
+                 </div>
+                 <button class="carousel-btn carousel-prev" type="button" aria-label="Previous screenshot">svg</button>
+                 <button class="carousel-btn carousel-next" type="button" aria-label="Next screenshot">svg</button>
+                 <img class="project-avatar" src="logo" alt="NAME logo" loading="lazy" />
+               </div>
+               <div class="carousel-dots" aria-label="Choose a screenshot"></div>
+             </div>
+
+             Avatar (logo "profile picture", half over the preview): square or badge logos use
+             .project-avatar (contain, with padding); a square logo that already has its own background and
+             fills the frame (e.g. the beige Maria Cafareli JPG) adds .project-avatar--cover. Never put
+             width/height on the <img>. Only the first slide is eager, the others are loading="lazy".
+             The slides are not links: the "Visit website" link at the base of the card is the only link.
+             Every alt/aria-label needs pt and de keys (the dots label is built by main.js from data-dot-label).
+
+             Optional "What we did" / "Result" block: paste it between the description and
+             the "Visit website" link ONLY when the real content exists (never leave it empty):
+
+             <div class="project-details">
+               <h4>What we did</h4>
+               <ul>
+                 <li>Short item 1</li>
+                 <li>Short item 2</li>
+               </ul>
+               <h4>Result</h4>
+               <p>One sentence with the real result.</p>
+             </div>
+             Omit the whole <div> (or just the Result h4 + p, or the list) when there is no data. -->
+        <div class="grid portfolio-grid">
+          <article class="card project-card" id="ohland-botanica">
+            <div class="carousel carousel--preview" role="region" aria-label="Ohland Botânica website screenshots" data-carousel data-dot-label="Go to screenshot">
+              <div class="carousel-stage">
+                <div class="carousel-track" tabindex="0">
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/ohland-botanica-1.webp" alt="Ohland Botânica homepage with a banner of seasonal flower arrangements" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/ohland-botanica-2.webp" alt="Ohland Botânica plants page listing potted plants and table centerpieces" loading="lazy" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/ohland-botanica-3.webp" alt="Ohland Botânica product page for a Philodendron in a ceramic pot" loading="lazy" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/ohland-botanica-4.webp" alt="Ohland Botânica landscaping page with a glass vase of red flowers" loading="lazy" />
+                  </figure>
+                </div>
+                <button class="carousel-btn carousel-prev" type="button" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button class="carousel-btn carousel-next" type="button" aria-label="Next screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+                <img class="project-avatar" src="assets/images/projects/ohland-botanica-crop.png" alt="Ohland Botânica logo" loading="lazy" />
+              </div>
+              <div class="carousel-dots" aria-label="Choose a screenshot"></div>
+            </div>
+            <h3>Ohland Botânica</h3>
+            <p>Natural plants, floral arrangements and custom projects for interiors and landscaping.</p>
+            <a href="https://www.ohlandbotanica.com/" class="btn-link" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+          </article>
+          <article class="card project-card" id="maria-cafareli">
+            <div class="carousel carousel--preview" role="region" aria-label="Maria Cafareli Cerâmica website screenshots" data-carousel data-dot-label="Go to screenshot">
+              <div class="carousel-stage">
+                <div class="carousel-track" tabindex="0">
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/maria-cafareli-1.webp" alt="Maria Cafareli Cerâmica homepage with a ceramic pitcher and bowl on a table" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/maria-cafareli-2.webp" alt="Maria Cafareli Cerâmica shop page with category filters and ceramic vases" loading="lazy" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/maria-cafareli-3.webp" alt="Maria Cafareli Cerâmica product page for the Lotus G vase" loading="lazy" />
+                  </figure>
+                </div>
+                <button class="carousel-btn carousel-prev" type="button" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button class="carousel-btn carousel-next" type="button" aria-label="Next screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+                <img class="project-avatar project-avatar--cover" src="assets/images/projects/maria-cafareli.jpg" alt="Maria Cafareli Cerâmica logo" loading="lazy" />
+              </div>
+              <div class="carousel-dots" aria-label="Choose a screenshot"></div>
+            </div>
+            <h3>Maria Cafareli Cerâmica</h3>
+            <p>Ceramic vases, plates, bowls and mugs for the small rituals of everyday life.</p>
+            <a href="https://mariacafareli.com.br/" class="btn-link" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+          </article>
+          <article class="card project-card" id="crm-change">
+            <div class="carousel carousel--preview" role="region" aria-label="CRM Change website screenshots" data-carousel data-dot-label="Go to screenshot">
+              <div class="carousel-stage">
+                <div class="carousel-track" tabindex="0">
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/crm-change-1.webp" alt="CRM Change homepage with a headline about starting a CRM project before choosing a vendor" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/crm-change-2.webp" alt="CRM Change services section with three readiness check packages" loading="lazy" />
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img src="assets/images/projects/previews/crm-change-3.webp" alt="CRM Change section with three reasons to work together" loading="lazy" />
+                  </figure>
+                </div>
+                <button class="carousel-btn carousel-prev" type="button" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button class="carousel-btn carousel-next" type="button" aria-label="Next screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+                <img class="project-avatar" src="assets/images/projects/crm-change-badge.svg" alt="CRM Change logo" loading="lazy" />
+              </div>
+              <div class="carousel-dots" aria-label="Choose a screenshot"></div>
+            </div>
+            <h3>CRM Change</h3>
+            <p>CRM project readiness consulting for DACH companies: honest, transparent and independent.</p>
+            <a href="https://crm.justcodepeople.com/" class="btn-link" target="_blank" rel="noopener noreferrer">Visit website ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container section-actions portfolio-back">
+      <a href="index.html" class="btn-link">← Back to home</a>
+    </div>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Join hundreds of satisfied European clients leveraging our Specialized Salesforce Solutions.</p>
+        <a href="contact.html" class="btn btn-white">Contact</a>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-badge">JCP</span>
+          <span class="logo-text"><strong>Just Code People</strong></span>
+        </a>
+        <p class="tagline">Specialized Salesforce Solutions</p>
+        <p class="cnpj">CNPJ: 67.097.293/0001-48</p>
+      </div>
+      <div>
+        <h4>Contact Information</h4>
+        <ul class="footer-list">
+          <li>✉️ <a href="mailto:info@justcodepeople.com">info@justcodepeople.com</a></li>
+          <li>📞 <a href="https://wa.me/4915754436602">+49 157 54436602</a></li>
+          <li>🌐 <a href="https://www.justcodepeople.com">www.justcodepeople.com</a></li>
+          <li>📷 <a href="https://www.instagram.com/justcodepeople/">@justcodepeople</a></li>
+          <li>💼 <a href="https://www.linkedin.com/company/just-code-people/">Just Code People</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Language / Idioma / Sprache</h4>
+        <div class="lang-options">
+          <label><input type="radio" name="lang" data-lang-select value="en" checked /> 🇺🇸 English</label>
+          <label><input type="radio" name="lang" data-lang-select value="pt" /> 🇧🇷 Portuguese (BR)</label>
+          <label><input type="radio" name="lang" data-lang-select value="de" /> 🇩🇪 German</label>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Just Code People. All rights reserved.</div>
+  </footer>
+
+  <!-- Floating WhatsApp button (same block on every page). The company number appears in 2 places:
+       the footer link and this button's href (assets/js/main.js?v=ff0e9f71 rebuilds the href per language
+       from this one; keep both in sync when changing the number). -->
+  <a class="whatsapp-float" href="https://wa.me/4915754436602?text=Hello%21%20I%20would%20like%20to%20know%20more%20about%20Just%20Code%20People%27s%20Salesforce%20solutions." data-wa-number="4915754436602" data-wa-text="Hello! I would like to know more about Just Code People's Salesforce solutions." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.73-1.7-.82-.23-.08-.39-.12-.56.12-.17.25-.64.82-.78.98-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+    <span class="whatsapp-float-label" translate="no">WhatsApp</span>
+  </a>
+
+  <script src="assets/js/i18n.js?v=b28ef58d"></script>
+  <script src="assets/js/main.js?v=ff0e9f71"></script>
+</body>
+</html>

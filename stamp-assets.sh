@@ -13,19 +13,25 @@
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
+# md5 -q existe so no macOS; no Linux usa md5sum. Saida: 8 primeiros caracteres do hash.
+hash8() {
+  if command -v md5 >/dev/null 2>&1; then md5 -q "$1" | cut -c1-8
+  else md5sum "$1" | cut -c1-8; fi
+}
+
 stamp_in() {  # stamp_in <arquivo-alvo> <caminho-do-asset> <hash>
   perl -i -pe "s{\Q$2\E(\?v=[0-9a-f]+)?}{$2?v=$3}g" "$1"
 }
 
 # 1) hero-motion.js e importado de dentro do main.js. Carimba primeiro, senao o
 #    hash do main.js mudaria depois de ja ter sido calculado.
-hm=$(md5 -q assets/js/hero-motion.js | cut -c1-8)
+hm=$(hash8 assets/js/hero-motion.js)
 stamp_in assets/js/main.js "./hero-motion.js" "$hm"
 echo "  assets/js/hero-motion.js  ->  v=$hm  (import dentro do main.js)"
 
 # 2) agora o main.js esta na forma final; carimba os tres nas paginas
 for a in assets/css/style.css assets/js/i18n.js assets/js/main.js; do
-  h=$(md5 -q "$a" | cut -c1-8)
+  h=$(hash8 "$a")
   for f in *.html; do stamp_in "$f" "$a" "$h"; done
   echo "  $a  ->  v=$h"
 done

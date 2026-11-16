@@ -31,6 +31,9 @@ window.JCP_I18N = {
     'About Us | Just Code People': {
       pt: 'Sobre Nós | Just Code People',
       de: 'Über uns | Just Code People' },
+    'Portfolio | Just Code People': {
+      pt: 'Portfólio | Just Code People',
+      de: 'Portfolio | Just Code People' },
     'Contact Us | Just Code People': {
       pt: 'Fale Conosco | Just Code People',
       de: 'Kontakt | Just Code People' },
@@ -47,6 +50,9 @@ window.JCP_I18N = {
     'Just Code People bridges the gap between Brazilian talent and European business needs, delivering Specialized Salesforce Solutions since 2026.': {
       pt: 'A Just Code People conecta o talento brasileiro às necessidades de negócio europeias, entregando Soluções Salesforce Especializadas desde 2026.',
       de: 'Just Code People verbindet brasilianisches Talent mit europäischen Geschäftsanforderungen und liefert seit 2026 spezialisierte Salesforce-Lösungen.' },
+    'Reference projects from companies Just Code People has worked with.': {
+      pt: 'Projetos de referência de empresas com as quais a Just Code People já trabalhou.',
+      de: 'Referenzprojekte von Unternehmen, mit denen Just Code People zusammengearbeitet hat.' },
     'Ready to start your project? Get in touch with Just Code People today.': {
       pt: 'Pronto para começar seu projeto? Fale com a Just Code People hoje mesmo.',
       de: 'Bereit, Ihr Projekt zu starten? Nehmen Sie noch heute Kontakt mit Just Code People auf.' }
@@ -91,6 +97,44 @@ window.JCP_I18N = {
     'Training & Capacity Building': 'Treinamento e Capacitação',
     'Empowering your team to maximize Salesforce adoption and ROI.': 'Capacitando o seu time para maximizar a adoção do Salesforce e o ROI.',
     'Learn more →': 'Saiba mais →',
+
+    /* Home — reference projects */
+    'Portfolio': 'Portfólio',
+    'Reference Projects': 'Projetos de Referência',
+    'Ohland Botânica logo': 'Logo da Ohland Botânica',
+    'Maria Cafareli Cerâmica logo': 'Logo da Maria Cafareli Cerâmica',
+    'CRM Change logo': 'Logo do CRM Change',
+    'Natural plants, floral arrangements and custom projects for interiors and landscaping.': 'Plantas naturais, arranjos florais e projetos sob medida para interiores e paisagismo.',
+    'Ceramic vases, plates, bowls and mugs for the small rituals of everyday life.': 'Vasos, pratos, bowls e canecas de cerâmica para os pequenos rituais do dia a dia.',
+    'CRM project readiness consulting for DACH companies: honest, transparent and independent.': 'Consultoria de prontidão para projetos de CRM para empresas da região DACH: honesta, transparente e independente.',
+    'See project →': 'Ver projeto →',
+    'View full portfolio →': 'Ver portfólio completo →',
+
+    /* Portfolio page */
+    'Technologies': 'Tecnologias',
+    'Our Reference Projects': 'Nossos Projetos de Referência',
+    'Selected projects from companies we have worked with.': 'Projetos selecionados de empresas com as quais já trabalhamos.',
+    'Visit website ↗': 'Visitar site ↗',
+    'Previous screenshot': 'Captura anterior',
+    'Next screenshot': 'Próxima captura',
+    'Choose a screenshot': 'Escolher uma captura',
+    'Go to screenshot': 'Ir para a captura',
+    'Ohland Botânica website screenshots': 'Capturas do site da Ohland Botânica',
+    'Maria Cafareli Cerâmica website screenshots': 'Capturas do site da Maria Cafareli Cerâmica',
+    'CRM Change website screenshots': 'Capturas do site do CRM Change',
+    'Ohland Botânica homepage with a banner of seasonal flower arrangements': 'Página inicial da Ohland Botânica com um banner de arranjos florais da estação',
+    'Ohland Botânica plants page listing potted plants and table centerpieces': 'Página de plantas da Ohland Botânica com plantas em vaso e centros de mesa',
+    'Ohland Botânica product page for a Philodendron in a ceramic pot': 'Página de produto da Ohland Botânica de um Philodendron em vaso cerâmico',
+    'Ohland Botânica landscaping page with a glass vase of red flowers': 'Página de paisagismo da Ohland Botânica com um vaso de vidro com flores vermelhas',
+    'Maria Cafareli Cerâmica homepage with a ceramic pitcher and bowl on a table': 'Página inicial da Maria Cafareli Cerâmica com uma jarra e um bowl de cerâmica sobre a mesa',
+    'Maria Cafareli Cerâmica shop page with category filters and ceramic vases': 'Página da loja da Maria Cafareli Cerâmica com filtros por categoria e vasos de cerâmica',
+    'Maria Cafareli Cerâmica product page for the Lotus G vase': 'Página de produto da Maria Cafareli Cerâmica do Vaso Lotus G',
+    'CRM Change homepage with a headline about starting a CRM project before choosing a vendor': 'Página inicial do CRM Change com o título sobre começar um projeto de CRM antes de escolher o fornecedor',
+    'CRM Change services section with three readiness check packages': 'Seção de serviços do CRM Change com três pacotes de Readiness Check',
+    'CRM Change section with three reasons to work together': 'Seção do CRM Change com três motivos para trabalhar juntos',
+    'What we did': 'O que fizemos',
+    'Result': 'Resultado',
+    '← Back to home': '← Voltar para a home',
 
     /* Home — advantage */
     'Our Advantage': 'Nosso Diferencial',
@@ -262,6 +306,44 @@ window.JCP_I18N = {
     'Training & Capacity Building': 'Schulung & Kompetenzaufbau',
     'Empowering your team to maximize Salesforce adoption and ROI.': 'Wir befähigen Ihr Team, Salesforce-Akzeptanz und ROI zu maximieren.',
     'Learn more →': 'Mehr erfahren →',
+
+    /* Home — reference projects */
+    'Portfolio': 'Portfolio',
+    'Reference Projects': 'Referenzprojekte',
+    'Ohland Botânica logo': 'Logo von Ohland Botânica',
+    'Maria Cafareli Cerâmica logo': 'Logo von Maria Cafareli Cerâmica',
+    'CRM Change logo': 'Logo von CRM Change',
+    'Natural plants, floral arrangements and custom projects for interiors and landscaping.': 'Echte Pflanzen, Blumenarrangements und individuelle Projekte für Innenräume und Landschaftsgestaltung.',
+    'Ceramic vases, plates, bowls and mugs for the small rituals of everyday life.': 'Keramikvasen, Teller, Schalen und Tassen für die kleinen Rituale des Alltags.',
+    'CRM project readiness consulting for DACH companies: honest, transparent and independent.': 'CRM-Readiness-Beratung für Unternehmen im DACH-Raum: ehrlich, transparent und unabhängig.',
+    'See project →': 'Projekt ansehen →',
+    'View full portfolio →': 'Gesamtes Portfolio ansehen →',
+
+    /* Portfolio page */
+    'Technologies': 'Technologien',
+    'Our Reference Projects': 'Unsere Referenzprojekte',
+    'Selected projects from companies we have worked with.': 'Ausgewählte Projekte von Unternehmen, mit denen wir zusammengearbeitet haben.',
+    'Visit website ↗': 'Website besuchen ↗',
+    'Previous screenshot': 'Vorheriger Screenshot',
+    'Next screenshot': 'Nächster Screenshot',
+    'Choose a screenshot': 'Screenshot auswählen',
+    'Go to screenshot': 'Zu Screenshot',
+    'Ohland Botânica website screenshots': 'Screenshots der Website von Ohland Botânica',
+    'Maria Cafareli Cerâmica website screenshots': 'Screenshots der Website von Maria Cafareli Cerâmica',
+    'CRM Change website screenshots': 'Screenshots der Website von CRM Change',
+    'Ohland Botânica homepage with a banner of seasonal flower arrangements': 'Startseite von Ohland Botânica mit einem Banner zu saisonalen Blumenarrangements',
+    'Ohland Botânica plants page listing potted plants and table centerpieces': 'Pflanzenseite von Ohland Botânica mit Topfpflanzen und Tischdekorationen',
+    'Ohland Botânica product page for a Philodendron in a ceramic pot': 'Produktseite von Ohland Botânica für einen Philodendron im Keramiktopf',
+    'Ohland Botânica landscaping page with a glass vase of red flowers': 'Landschaftsgestaltungs-Seite von Ohland Botânica mit einer Glasvase voller roter Blumen',
+    'Maria Cafareli Cerâmica homepage with a ceramic pitcher and bowl on a table': 'Startseite von Maria Cafareli Cerâmica mit einem Keramikkrug und einer Schale auf einem Tisch',
+    'Maria Cafareli Cerâmica shop page with category filters and ceramic vases': 'Shopseite von Maria Cafareli Cerâmica mit Kategoriefiltern und Keramikvasen',
+    'Maria Cafareli Cerâmica product page for the Lotus G vase': 'Produktseite von Maria Cafareli Cerâmica für die Vase Lotus G',
+    'CRM Change homepage with a headline about starting a CRM project before choosing a vendor': 'Startseite von CRM Change mit der Überschrift, ein CRM-Projekt vor der Anbieterauswahl zu beginnen',
+    'CRM Change services section with three readiness check packages': 'Leistungsbereich von CRM Change mit drei Readiness-Check-Paketen',
+    'CRM Change section with three reasons to work together': 'Bereich von CRM Change mit drei Gründen für die Zusammenarbeit',
+    'What we did': 'Was wir gemacht haben',
+    'Result': 'Ergebnis',
+    '← Back to home': '← Zurück zur Startseite',
 
     /* Home — advantage */
     'Our Advantage': 'Unser Vorteil',
