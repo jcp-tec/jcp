@@ -17,6 +17,7 @@ EXCLUDES=(
   --exclude '.git'
   --exclude '.gitignore'
   --exclude '.github'
+  --exclude '.claude'                              # agentes, venv do QA, planos: nunca publicar
   --exclude '.DS_Store'
   --exclude 'deploy.sh'
   --exclude 'stamp-assets.sh'

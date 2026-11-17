@@ -283,7 +283,7 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 
 /* Footer ------------------------------------------------------------------ */
 .site-footer { background: var(--color-primary-darker); color: #cbd5e1; }
-.footer-top { padding: 64px 0 40px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; }
+.footer-top { padding-block: 64px 40px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; }
 .footer-brand .logo-badge { background: rgba(255,255,255,0.15); }
 .footer-brand .logo-text strong { color: #fff; }
 .footer-brand .logo-text small { color: #93c5fd; }
@@ -592,6 +592,17 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
   .site-header.nav-open .lang-switch, .site-header.nav-open .btn-outline {
     display: inline-flex; align-items: center; min-height: 44px;
   }
+  /* Lista de idiomas: janela flutuante por cima da pagina (como no desktop). O painel do menu tem
+     overflow-y: auto e cortaria a lista, entao enquanto ela esta aberta o painel libera o overflow.
+     Ancorada na esquerda do botao (no mobile ele fica a esquerda; right:0 mandaria a lista para fora da tela). */
+  .site-header.nav-open:has(.lang-switcher.open) { overflow: visible; }
+  .site-header.nav-open .lang-menu { left: 0; right: auto; }
+  .site-header.nav-open .lang-menu li { display: flex; align-items: center; min-height: 44px; }
+}
+
+/* Telas baixas: sem espaco embaixo do botao, a lista abre para CIMA em vez de sair da tela */
+@media (max-width: 1000px) and (max-height: 640px) {
+  .site-header.nav-open .lang-menu { top: auto; bottom: calc(100% + 0.5rem); }
 }
 
 @media (max-width: 960px) {
@@ -618,11 +629,11 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 .card, .team-card, .footer-top, .org-columns li { overflow-wrap: break-word; }
 .footer-brand .logo { flex-wrap: wrap; }
 .footer-list a, .footer-list li, .contact-card a { min-width: 0; overflow-wrap: anywhere; }
-.feature-item > div, .hq-points > *, .contact-card, .form-field { min-width: 0; }
+.feature-item > div, .hq-points > *, .contact-card, .form-field, .talent-invite > *, .talent-float > *, .form-check > * { min-width: 0; }
 
 /* Alvos de toque >= 44px em celular/tablet (<=960px) e ponteiro grosso (visual desktop intacto) */
 @media (max-width: 960px), (pointer: coarse) {
-  .card > a.btn-link, .about-what .card .btn-link, .portfolio-back .btn-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .card > a.btn-link, .about-what .card .btn-link, .portfolio-back .btn-link, .talent-invite .btn-link, .form-fallback .btn-link { display: inline-flex; align-items: center; min-height: 44px; }
   .footer-list { gap: 0; }
   .footer-list li { min-height: 44px; }
   .footer-list a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -1114,4 +1125,195 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 }
 @media print { .whatsapp-float { display: none !important; } }
 /* Reserva espaco no fim da pagina para o botao flutuante nao cobrir o copyright */
-@media (max-width: 720px) { .footer-bottom { padding-bottom: calc(22px + 56px); } }
+@media (max-width: 720px) { .footer-bottom { padding-bottom: calc(22px + 56px + 24px); } } /* botoes flutuantes (56) ficam um em cada canto, entao so um respiro */
+
+/* Talentos: convite discreto (team e about) ------------------------------------ */
+.talent-invite {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-tint);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.talent-invite p { margin: 0; font-size: 0.95rem; color: var(--color-text-muted); overflow-wrap: break-word; }
+.talent-invite strong { color: var(--color-text); }
+
+/* Talentos: pagina de candidatura ---------------------------------------------- */
+/* 3 passos: reaproveita .process-steps (5 colunas) e so troca o numero de colunas */
+.process-steps--3 { grid-template-columns: repeat(3, 1fr); max-width: 960px; margin: 0 auto; }
+.talent-faq .card:hover { transform: none; box-shadow: var(--shadow-card); border-color: var(--color-border); } /* FAQ nao e clicavel: sem efeito de elevacao */
+/* Formulario de talentos: usa o mesmo visual do formulario de contato (.contact-layout + .form-field).
+   So o botao desabilitado e o checkbox de consentimento sao especificos daqui. */
+/* Formulario centralizado: uma coluna so, com o cartao de contato embaixo */
+.talent-apply { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; gap: 2rem; }
+#talent-form .btn[type="submit"] { width: 100%; justify-content: center; text-align: center; }
+.talent-apply .contact-card { text-align: center; margin-bottom: 0; }
+#talent-form .btn:disabled { opacity: 0.7; cursor: progress; transform: none; box-shadow: none; }
+#talent-form .btn { cursor: pointer; }
+.form-check { display: flex; flex-wrap: wrap; align-items: flex-start; column-gap: 0.75rem; row-gap: 0; margin-bottom: 1.5rem; }
+.form-check input { flex-shrink: 0; width: 24px; height: 24px; margin: 10px 0 0; accent-color: var(--color-primary); }
+.form-check label { flex: 1 1 0; min-width: 0; min-height: 44px; display: flex; align-items: center; font-size: 0.85rem; line-height: 1.55; color: var(--color-text-muted); overflow-wrap: break-word; cursor: pointer; }
+.form-check-more { width: calc(100% - 24px - 0.75rem); margin-left: calc(24px + 0.75rem); padding: 0; border: 0; background: none; font: inherit; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; margin-top: -0.5rem; } /* cai sob o texto, alinhado a ele; 44px de toque */
+.form-check-more:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; border-radius: var(--radius-sm); }
+.form-check input:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.form-fallback { margin: 0.75rem 0 0; font-size: 0.9rem; }
+.form-fallback[hidden] { display: none; }
+/* Campo-isca (honeypot): fora da tela, nunca display:none (bots mais simples ignoram campos assim) */
+.form-trap { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+#apply { scroll-margin-top: 72px; } /* header sticky nao cobre o titulo ao vir da ancora */
+
+@media (max-width: 720px) {
+  .process-steps--3 { grid-template-columns: 1fr; }
+}
+
+/* Talentos: balao flutuante ---------------------------------------------------- */
+/* Canto inferior ESQUERDO, na mesma linha de base do WhatsApp (que fica a direita): nunca se sobrepoem.
+   Azul da marca (--color-primary): texto branco sobre #2563eb = 5.2:1 (AA). Hover usa --color-primary-dark. */
+.talent-float {
+  position: fixed;
+  left: calc(1rem + env(safe-area-inset-left, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 40; /* mesma camada do WhatsApp: abaixo do header/menu (50) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  pointer-events: none; /* so os filhos recebem clique, o conteiner nao cobre o conteudo */
+}
+.talent-float-btn {
+  position: relative;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-lift);
+  animation: jcpTalentIn 0.5s ease-out 1.2s both;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.talent-float-btn:hover, .talent-float-btn:focus-visible { background: var(--color-primary-dark); transform: scale(1.06); }
+.talent-float-btn:focus-visible { outline: 3px solid var(--color-navy); outline-offset: 3px; }
+/* Pulso: 3 repeticoes depois da entrada e para (chama atencao sem ficar piscando) */
+.talent-float-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--color-primary);
+  opacity: 0;
+  pointer-events: none;
+  animation: jcpTalentPulse 2.2s ease-out 2.4s 3;
+}
+.talent-float-label { display: none; white-space: nowrap; }
+.talent-float-tip {
+  position: relative;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  max-width: min(280px, calc(100vw - 2rem - 8px));
+  padding: 0 0.25rem 0 1rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift);
+  animation: jcpTalentTip 0.35s ease-out both;
+}
+.talent-float-tip[hidden] { display: none; }
+.talent-float-tip::after { /* seta apontando para o botao */
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transform: rotate(45deg);
+}
+.talent-float-tip-link { padding: 0.75rem 0; font-size: 0.9rem; font-weight: 600; line-height: 1.4; color: var(--color-text); overflow-wrap: break-word; }
+.talent-float-tip-link:hover { color: var(--color-primary); }
+.talent-float-close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.talent-float-close:hover { color: var(--color-text); }
+.talent-float-close:focus-visible, .talent-float-tip-link:focus-visible { outline: 3px solid var(--color-navy); outline-offset: 2px; border-radius: var(--radius-sm); }
+@keyframes jcpTalentIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes jcpTalentPulse {
+  from { opacity: 0.7; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.5); }
+}
+@keyframes jcpTalentTip {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (min-width: 721px) {
+  .talent-float { left: calc(1.5rem + env(safe-area-inset-left, 0px)); bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+  .talent-float-btn { padding: 0 1.1rem; }
+  .talent-float-label { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .talent-float-btn, .talent-float-tip { animation: none; transition: none; }
+  .talent-float-btn::after { animation: none; display: none; }
+  .talent-float-btn:hover, .talent-float-btn:focus-visible { transform: none; }
+}
+@media print { .talent-float { display: none !important; } }
+
+/* Talentos: janela de consentimento -------------------------------------------- */
+/* <dialog> nativo: o navegador cuida de foco, Esc e camada superior. */
+.consent-dialog {
+  width: min(560px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  color: var(--color-text);
+  box-shadow: var(--shadow-lift);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.consent-dialog[open] { animation: jcpConsentIn 0.25s ease-out; }
+.consent-dialog::backdrop { background: rgba(10, 15, 30, 0.6); }
+.consent-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.consent-dialog-head h2 { margin: 0; font-size: clamp(1.25rem, 3.6vw, 1.5rem); line-height: 1.25; overflow-wrap: break-word; }
+.consent-dialog-close {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; margin: -0.4rem -0.4rem 0 0;
+  border-radius: var(--radius-full); color: var(--color-text-muted); cursor: pointer;
+}
+.consent-dialog-close:hover { color: var(--color-text); background: var(--color-bg-alt); }
+.consent-dialog-close:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.consent-list { margin: 0 0 1.5rem; }
+.consent-list dt { margin-top: 1rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-primary); }
+.consent-list dt:first-child { margin-top: 0; }
+.consent-list dd { margin: 0.25rem 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-muted); overflow-wrap: break-word; }
+.consent-dialog > .btn { width: 100%; justify-content: center; cursor: pointer; }
+@keyframes jcpConsentIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .consent-dialog[open] { animation: none; } }

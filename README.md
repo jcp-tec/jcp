@@ -16,6 +16,7 @@ jcp-site/
 ├── solutions.html       # Soluções
 ├── team.html            # Time / Equipe
 ├── about.html           # Sobre
+├── talent.html          # Banco de talentos (candidatura; fora do menu de propósito)
 ├── contact.html          # Contato
 ├── assets/
 │   ├── css/style.css    # Todo o design system (cores, tipografia, componentes)
@@ -115,3 +116,35 @@ Qualquer endpoint que aceite `POST` com JSON serve — [Formspree](https://forms
 Se você publicar na Netlify, há ainda a opção nativa: adicione `data-netlify="true"` e `<input type="hidden" name="form-name" value="contact">` no `<form>` — aí a Netlify recebe os envios sem serviço externo nenhum.
 
 O e-mail de destino do modo padrão fica em `CONTACT_EMAIL`, na mesma linha do arquivo.
+
+## Banco de talentos (talent.html)
+
+Página de candidatura, **de propósito fora da `.main-nav`**: o acesso é discreto, por três pontos de entrada: o convite em `team.html` e em `about.html` (`.talent-invite`, dentro da seção de liderança) e o balão flutuante "Join our team" (`.talent-float`), que fica no canto inferior esquerdo, em azul, na mesma linha do botão do WhatsApp (à direita), em todas as páginas, exceto na própria `talent.html`. O balão tem um tooltip que aparece uma vez por sessão, depois de 6 s, e o fechamento fica em `sessionStorage` (`jcp-talent-tip`).
+
+**Fluxo:** cadastro rápido (nome, e-mail, telefone) -> `POST` no Web App do Google Apps Script -> redireciona para o WhatsApp do bot com `Código: XXXXXX`. O contrato do Web App está em `.claude/plans/integracao-web-app.md`.
+
+### Configuração (ainda são placeholders)
+
+Os dois valores ficam como atributos `data-*` no `<form id="talent-form">` de `talent.html`:
+
+```html
+<form id="talent-form" data-webapp-url="https://script.google.com/macros/s/AKfycbzsftp5ZGZJhptL2WDvY-yD0PwSW-3CMLIYH4BekkRLLjsut-XsKIcAHB88Xx_ogGdrwA/exec" data-bot-number="4915754436602">
+```
+
+- `data-webapp-url`: URL da implantação do Web App (termina em `/exec`).
+- `data-bot-number`: número do bot no WhatsApp, só dígitos (DDI + DDD + número).
+
+Enquanto qualquer um deles for placeholder (`REPLACE_ME` ou `5500000...`), o formulário não chama nada e mostra um aviso traduzido ("Applications are not open yet...").
+
+**Nunca** coloque o `BOT_TOKEN` no site: ele vive só no servidor do bot.
+
+### Detalhes do envio
+
+- Corpo em JSON com `Content-Type: text/plain;charset=utf-8` (evita o preflight de CORS) e ação `cadastro`. O telefone é digitado no formato nacional e enviado como `+55` + dígitos (aceita DDD com 10 ou 11 dígitos; prefixo `+55`/`55` digitado é tolerado).
+- Campo-isca `website` fora da tela (`.form-trap`, `tabindex="-1"`, `aria-hidden`); sempre enviado vazio.
+- Confere `ok` na resposta (o HTTP costuma ser 200 mesmo com erro) e traduz `nome_invalido`, `email_invalido`, `telefone_invalido`, `consentimento`, `erro_interno` e falha de rede, no padrão `.form-status`.
+- A mensagem pré-preenchida do WhatsApp segue o idioma ativo: `Olá! Quero me candidatar. Código: XXXXXX` (PT), `Hello! I want to apply. Code: XXXXXX` (EN), `Hallo! Ich möchte mich bewerben. Code: XXXXXX` (DE). **O bot precisa extrair o código de qualquer um dos três rótulos** (`Código:`, `Code:`), 6 caracteres depois dos dois-pontos.
+
+### LGPD e política de privacidade
+
+O checkbox de consentimento (obrigatório, nunca marcado por padrão) tem uma frase curta e um link azul "Learn more" que abre uma janela (`<dialog id="consent-dialog">`) com o detalhe: dados coletados, finalidade (avaliar a candidatura e entrar em contato sobre oportunidades) e o canal para pedir a remoção dos dados (`info@justcodepeople.com`). O site **ainda não tem página de política de privacidade**: recomenda-se publicar uma e linkar no texto do consentimento. Defina também, com o jurídico, por quanto tempo os dados ficam na planilha. Esse texto é um rascunho, não parecer jurídico.
