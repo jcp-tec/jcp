@@ -80,7 +80,7 @@ window.JCP_I18N = {
     /* Home — hero + CTA */
     'Specialized Salesforce Solutions for European Companies': 'Soluções Salesforce Especializadas para Empresas Europeias',
     'We empower businesses with tailored Salesforce solutions, from implementation to custom development.': 'Capacitamos empresas com soluções Salesforce sob medida, da implementação ao desenvolvimento personalizado.',
-    'Explore Our Solutions →': 'Conheça Nossas Soluções →',
+    'Explore Our Solutions →': 'Conheça Nossas Soluções →',
     'Contact Us': 'Fale Conosco',
     'Ready to Transform Your Business?': 'Pronto para Transformar Seu Negócio?',
     'Join hundreds of satisfied European clients leveraging our Specialized Salesforce Solutions.': 'Junte-se a centenas de clientes europeus satisfeitos que já usam nossas Soluções Salesforce Especializadas.',
@@ -96,19 +96,22 @@ window.JCP_I18N = {
     'Ongoing maintenance and user support to ensure system health.': 'Manutenção contínua e suporte ao usuário para garantir a saúde do sistema.',
     'Training & Capacity Building': 'Treinamento e Capacitação',
     'Empowering your team to maximize Salesforce adoption and ROI.': 'Capacitando o seu time para maximizar a adoção do Salesforce e o ROI.',
-    'Learn more →': 'Saiba mais →',
+    'Learn more →': 'Saiba mais →',
 
     /* Home — reference projects */
     'Portfolio': 'Portfólio',
     'Reference Projects': 'Projetos de Referência',
+    'Voices': 'Vozes',
+    'What our clients say': 'O que nossos clientes dizem',
+    "Just Code People combines solid Salesforce know-how with technical flexibility and a good sense for what businesses need. The combination of a development team in Brazil and a European business orientation makes Just Code People a very exciting partner for custom digitalization solutions.": "A Just Code People combina profundo conhecimento de Salesforce com flexibilidade técnica e uma compreensão apurada das necessidades de negócios. A combinação de uma equipe de desenvolvimento no Brasil e um foco em negócios na Europa torna a Just Code People uma parceira altamente atrativa para soluções de digitalização personalizadas.",
     'Ohland Botânica logo': 'Logo da Ohland Botânica',
     'Maria Cafareli Cerâmica logo': 'Logo da Maria Cafareli Cerâmica',
     'CRM Change logo': 'Logo do CRM Change',
     'Natural plants, floral arrangements and custom projects for interiors and landscaping.': 'Plantas naturais, arranjos florais e projetos sob medida para interiores e paisagismo.',
     'Ceramic vases, plates, bowls and mugs for the small rituals of everyday life.': 'Vasos, pratos, bowls e canecas de cerâmica para os pequenos rituais do dia a dia.',
     'CRM project readiness consulting for DACH companies: honest, transparent and independent.': 'Consultoria de prontidão para projetos de CRM para empresas da região DACH: honesta, transparente e independente.',
-    'See project →': 'Ver projeto →',
-    'View full portfolio →': 'Ver portfólio completo →',
+    'See project →': 'Ver projeto →',
+    'View full portfolio →': 'Ver portfólio completo →',
 
     /* Portfolio page */
     'Technologies': 'Tecnologias',
@@ -289,9 +292,9 @@ window.JCP_I18N = {
     /* Home — hero + CTA */
     'Specialized Salesforce Solutions for European Companies': 'Spezialisierte Salesforce-Lösungen für europäische Unternehmen',
     'We empower businesses with tailored Salesforce solutions, from implementation to custom development.': 'Wir stärken Unternehmen mit maßgeschneiderten Salesforce-Lösungen – von der Implementierung bis zur individuellen Entwicklung.',
-    'Explore Our Solutions →': 'Unsere Lösungen entdecken →',
+    'Explore Our Solutions →': 'Unsere Lösungen entdecken →',
     'Contact Us': 'Kontaktieren Sie uns',
-    'Ready to Transform Your Business?': 'Bereit, Ihr Unternehmen zu transformieren?',
+    'Ready to Transform Your Business?': 'Bereit, Ihr Unternehmen zu transformieren⁠?',
     'Join hundreds of satisfied European clients leveraging our Specialized Salesforce Solutions.': 'Schließen Sie sich Hunderten zufriedener europäischer Kunden an, die unsere spezialisierten Salesforce-Lösungen nutzen.',
 
     /* Home — solutions preview */
@@ -305,19 +308,22 @@ window.JCP_I18N = {
     'Ongoing maintenance and user support to ensure system health.': 'Laufende Wartung und Anwendersupport für einen stabilen Systembetrieb.',
     'Training & Capacity Building': 'Schulung & Kompetenzaufbau',
     'Empowering your team to maximize Salesforce adoption and ROI.': 'Wir befähigen Ihr Team, Salesforce-Akzeptanz und ROI zu maximieren.',
-    'Learn more →': 'Mehr erfahren →',
+    'Learn more →': 'Mehr erfahren →',
 
     /* Home — reference projects */
     'Portfolio': 'Portfolio',
     'Reference Projects': 'Referenzprojekte',
+    'Voices': 'Stimmen',
+    'What our clients say': 'Was unsere Kunden sagen',
+    "Just Code People combines solid Salesforce know-how with technical flexibility and a good sense for what businesses need. The combination of a development team in Brazil and a European business orientation makes Just Code People a very exciting partner for custom digitalization solutions.": "Just Code People verbindet fundiertes Salesforce-Know-how mit technischer Flexibilität und einem guten Gespür für die Anforderungen von Unternehmen. Die Kombination aus einem Entwicklungsteam in Brasilien und einer europäischen Geschäftsausrichtung macht Just Code People zu einem sehr spannenden Partner für individuelle Digitalisierungslösungen.",
     'Ohland Botânica logo': 'Logo von Ohland Botânica',
     'Maria Cafareli Cerâmica logo': 'Logo von Maria Cafareli Cerâmica',
     'CRM Change logo': 'Logo von CRM Change',
     'Natural plants, floral arrangements and custom projects for interiors and landscaping.': 'Echte Pflanzen, Blumenarrangements und individuelle Projekte für Innenräume und Landschaftsgestaltung.',
     'Ceramic vases, plates, bowls and mugs for the small rituals of everyday life.': 'Keramikvasen, Teller, Schalen und Tassen für die kleinen Rituale des Alltags.',
     'CRM project readiness consulting for DACH companies: honest, transparent and independent.': 'CRM-Readiness-Beratung für Unternehmen im DACH-Raum: ehrlich, transparent und unabhängig.',
-    'See project →': 'Projekt ansehen →',
-    'View full portfolio →': 'Gesamtes Portfolio ansehen →',
+    'See project →': 'Projekt ansehen →',
+    'View full portfolio →': 'Gesamtes Portfolio ansehen →',
 
     /* Portfolio page */
     'Technologies': 'Technologien',

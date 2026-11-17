@@ -93,6 +93,8 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
   font-weight: 600;
   font-size: 0.95rem;
   border: 2px solid transparent;
+  text-align: center;
+  text-wrap: balance; /* seta nao fica sozinha na ultima linha */
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 .btn:hover { transform: translateY(-1px); }
@@ -278,12 +280,12 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
   overflow: hidden;
   padding: clamp(64px, 9vw, 96px) 0;
 }
-.cta-band h2 { font-size: 2.4rem; margin-bottom: 0.6em; }
+.cta-band h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); margin-bottom: 0.6em; text-wrap: balance; }
 .cta-band p { color: #dbeafe; font-size: 1.1rem; margin-bottom: 2rem; }
 
 /* Footer ------------------------------------------------------------------ */
 .site-footer { background: var(--color-primary-darker); color: #cbd5e1; }
-.footer-top { padding: 64px 0 40px; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; }
+.footer-top { padding-block: 64px 40px; /* nao zerar o padding lateral do .container */ display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; }
 .footer-brand .logo-badge { background: rgba(255,255,255,0.15); }
 .footer-brand .logo-text strong { color: #fff; }
 .footer-brand .logo-text small { color: #93c5fd; }
@@ -422,8 +424,9 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 .section-actions { text-align: center; margin-top: 3rem; }
 
 @media (max-width: 960px) {
-  /* .grid-3 viraria 2 colunas e deixaria o 3o card orfao: 1 coluna centralizada */
-  .projects-grid { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+  /* .grid-3 viraria 2 colunas e deixaria o 3o card orfao: 1 coluna centralizada
+     (.grid.projects-grid tem mais especificidade que .grid-3 do bloco Responsive) */
+  .grid.projects-grid { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
 }
 @media (max-width: 720px) {
   .section-actions .btn { width: 100%; justify-content: center; }
@@ -563,8 +566,30 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
   .tech-list { flex-shrink: 1; min-width: 0; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: 1.25rem 2.5rem; padding: 0.75rem 1.25rem; }
 }
 
+/* Depoimento (home, "Voices") ----------------------------------------------------- */
+/* Cartao unico, mesmo acabamento dos cards claros do site: fundo tint, borda fina, raio grande, sem sombra
+   pesada. Aspa decorativa fixa (\201C) em todos os idiomas. Foto = avatar no rodape. */
+.voice-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 4vw, 2rem);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  min-width: 0;
+}
+.voice-mark::before { content: "\201C"; display: block; font-size: 3rem; font-weight: 700; line-height: 1; height: 2.2rem; color: color-mix(in srgb, var(--color-text-soft) 40%, transparent); }
+.voice-card blockquote { margin: 0; padding: 0 0 1.5rem; flex: 1; }
+.voice-card blockquote p { margin: 0; font-size: 1rem; font-style: italic; font-weight: 400; line-height: 1.7; color: var(--color-text); overflow-wrap: break-word; hyphens: manual; text-wrap: pretty; }
+.voice-author { display: flex; align-items: center; gap: 0.85rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border); }
+.voice-avatar { width: 56px; height: 56px; flex-shrink: 0; overflow: hidden; border: 2px solid var(--color-bg); border-radius: var(--radius-full); box-shadow: 0 0 0 1px var(--color-border); }
+.voice-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.65); transform-origin: 40% 24%; }
+.voice-author strong { min-width: 0; font-size: 0.95rem; color: var(--color-text); overflow-wrap: anywhere; }
+
 /* Responsive ------------------------------------------------------------------ */
-@media (max-width: 1000px) {
+@media (max-width: 1010px) {
   /* Menu mobile/tablet: o header completo (logo + nav + idioma + CTA) nao cabe
      abaixo de ~960px em PT/DE. Painel em fluxo normal: nada fica escondido. */
   .main-nav, .header-actions { display: none; }
@@ -607,10 +632,31 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 }
 
 @media (max-width: 720px) {
-  .hero h1 { font-size: 2.4rem; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.4rem); }
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
   .section { padding: 56px 0; }
+}
+
+/* Titulos: palavras longas (DE) hifenizam em vez de quebrar no meio --------------- */
+h1, h2, h3 { overflow-wrap: break-word; }
+@media (max-width: 560px) { h1, h2, h3 { hyphens: auto; } }
+@media (max-width: 360px) {
+  .hero h1 { font-size: 2rem; }
+  .section-head h2, .section h2, .cta-band h2 { font-size: 1.5rem; }
+  .section h3 { font-size: 1.2rem; }
+}
+
+/* Equipe: grids que antes eram inline (nao venciam os @media) --------------------- */
+.team-grid--leaders { grid-template-columns: repeat(2, 1fr); max-width: 556px; margin: 0 auto; }
+.org-columns--2 { grid-template-columns: repeat(2, 1fr); max-width: 820px; margin: 0 auto; }
+.team-card .role, .team-card .bio, .org-columns li, .org-columns h4 { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 960px) {
+  .org-columns--2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .team-grid--leaders { grid-template-columns: 1fr; max-width: 420px; }
+  .org-columns--2 { max-width: 420px; }
 }
 
 /* Responsividade global: grids/cards nao estouram com texto longo (DE) ou zoom --- */
@@ -630,6 +676,21 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
   .lang-options label { min-height: 44px; }
   .lang-options input { width: 20px; height: 20px; }
   .contact-social a { width: 44px; height: 44px; }
+}
+@media (pointer: coarse) {
+  .main-nav a { min-height: 44px; display: inline-flex; align-items: center; }
+  .lang-options label { min-height: 44px; }
+}
+
+/* Mobile: botao flutuante do WhatsApp nao cobre campos/botoes finais -------------- */
+@media (max-width: 720px) {
+  .contact-layout, main > .section:last-child { padding-bottom: calc(56px + 40px); }
+  .site-footer { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* SVG de integracao: rotulos legiveis em telas estreitas (viewBox 500 escala ~0.58 em 320px) */
+@media (max-width: 480px) {
+  .solution-media--network svg g[font-size="12.5"] { font-size: 16px; }
 }
 
 /* Language switcher ------------------------------------------------------ */
@@ -1114,4 +1175,3 @@ h1, h2, h3, h4 { margin: 0 0 0.5em; font-weight: 700; letter-spacing: -0.02em; }
 }
 @media print { .whatsapp-float { display: none !important; } }
 /* Reserva espaco no fim da pagina para o botao flutuante nao cobrir o copyright */
-@media (max-width: 720px) { .footer-bottom { padding-bottom: calc(22px + 56px); } }
