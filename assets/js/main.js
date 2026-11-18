@@ -188,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
       switchBtn.setAttribute('aria-expanded', String(open));
     });
     document.addEventListener('click', (event) => {
-      if (!wrapper.contains(event.target)) closeMenu();
+      // O backdrop mobile e um ::before do wrapper: clique nele chega com target = wrapper.
+      if (!menu.contains(event.target) && !switchBtn.contains(event.target)) closeMenu();
     });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeMenu();
